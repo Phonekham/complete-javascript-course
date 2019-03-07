@@ -44,17 +44,50 @@
 // });
 
 // primative vs object
-var a = 23;
-var b = a,
-  a = 46;
-console.log(a);
-console.log(b);
+// var a = 23;
+// var b = a,
+//   a = 46;
+// console.log(a);
+// console.log(b);
+//
+// var obj1 = {
+//   name: 'phone',
+//   age: 24
+// };
+// var obj2 = obj1;
+// obj1.age = 30;
+// console.log(obj1.age);
+// console.log(obj2.age);
 
-var obj1 = {
-  name: 'phone',
-  age: 24
-};
-var obj2 = obj1;
-obj1.age = 30;
-console.log(obj1.age);
-console.log(obj2.age);
+//passing function as arguement
+var years = [1992, 1994, 2009, 2003, 1995];
+
+function arrayCalc(arr, fn) {
+  var arrRes = [];
+  for (var i = 0; i < arr.length; i++) {
+    arrRes.push(fn(arr[i]));
+  }
+  return arrRes;
+}
+
+function calculateAge(el) {
+  return 2019 - el;
+}
+
+function isFullAge(el) {
+  return el >= 18;
+}
+
+function maxHeartRate(el) {
+  if (el >= 18 && el <= 81) {
+    return Math.round(206.9 - (0.67 * el));
+  } else {
+    return -1;
+  }
+}
+var ages = arrayCalc(years, calculateAge);
+console.log(ages);
+var isFull = arrayCalc(ages, isFullAge);
+console.log(isFull);
+var rates = arrayCalc(ages, maxHeartRate);
+console.log(rates);
