@@ -60,34 +60,56 @@
 // console.log(obj2.age);
 
 //passing function as arguement
-var years = [1992, 1994, 2009, 2003, 1995];
+// var years = [1992, 1994, 2009, 2003, 1995];
+//
+// function arrayCalc(arr, fn) {
+//   var arrRes = [];
+//   for (var i = 0; i < arr.length; i++) {
+//     arrRes.push(fn(arr[i]));
+//   }
+//   return arrRes;
+// }
+//
+// function calculateAge(el) {
+//   return 2019 - el;
+// }
+//
+// function isFullAge(el) {
+//   return el >= 18;
+// }
+//
+// function maxHeartRate(el) {
+//   if (el >= 18 && el <= 81) {
+//     return Math.round(206.9 - (0.67 * el));
+//   } else {
+//     return -1;
+//   }
+// }
+// var ages = arrayCalc(years, calculateAge);
+// console.log(ages);
+// var isFull = arrayCalc(ages, isFullAge);
+// console.log(isFull);
+// var rates = arrayCalc(ages, maxHeartRate);
+// console.log(rates);
 
-function arrayCalc(arr, fn) {
-  var arrRes = [];
-  for (var i = 0; i < arr.length; i++) {
-    arrRes.push(fn(arr[i]));
-  }
-  return arrRes;
-}
-
-function calculateAge(el) {
-  return 2019 - el;
-}
-
-function isFullAge(el) {
-  return el >= 18;
-}
-
-function maxHeartRate(el) {
-  if (el >= 18 && el <= 81) {
-    return Math.round(206.9 - (0.67 * el));
+// function returning function
+function interviewQuestion(job) {
+  if (job === 'designer') {
+    return function(name) {
+      console.log(name + 'can u explain ux');
+    }
+  } else if (job === 'teacher') {
+    return function(name) {
+      console.log(name + ' teach what subject');
+    }
   } else {
-    return -1;
+    return function(name) {
+      console.log('hello' + 'what do you do');
+    }
   }
 }
-var ages = arrayCalc(years, calculateAge);
-console.log(ages);
-var isFull = arrayCalc(ages, isFullAge);
-console.log(isFull);
-var rates = arrayCalc(ages, maxHeartRate);
-console.log(rates);
+
+var teacherQuestion = interviewQuestion('teacher');
+teacherQuestion('ko');
+var designerQuestion = interviewQuestion('designer');
+teacherQuestion('jhon');
