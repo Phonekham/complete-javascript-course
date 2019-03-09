@@ -93,23 +93,42 @@
 // console.log(rates);
 
 // function returning function
-function interviewQuestion(job) {
-  if (job === 'designer') {
-    return function(name) {
-      console.log(name + 'can u explain ux');
-    }
-  } else if (job === 'teacher') {
-    return function(name) {
-      console.log(name + ' teach what subject');
-    }
-  } else {
-    return function(name) {
-      console.log('hello' + 'what do you do');
-    }
-  }
-}
+// function interviewQuestion(job) {
+//   if (job === 'designer') {
+//     return function(name) {
+//       console.log(name + 'can u explain ux');
+//     }
+//   } else if (job === 'teacher') {
+//     return function(name) {
+//       console.log(name + ' teach what subject');
+//     }
+//   } else {
+//     return function(name) {
+//       console.log('hello' + 'what do you do');
+//     }
+//   }
+// }
+//
+// var teacherQuestion = interviewQuestion('teacher');
+// teacherQuestion('ko');
+// var designerQuestion = interviewQuestion('designer');
+// teacherQuestion('jhon');
 
-var teacherQuestion = interviewQuestion('teacher');
-teacherQuestion('ko');
-var designerQuestion = interviewQuestion('designer');
-teacherQuestion('jhon');
+// IIFE
+// function game() {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// }
+// game();
+
+(function() {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+// console.log(score);
+
+(function(good) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - good);
+})(5);
