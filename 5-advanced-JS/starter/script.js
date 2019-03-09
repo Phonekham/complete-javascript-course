@@ -121,14 +121,43 @@
 // }
 // game();
 
-(function() {
-  var score = Math.random() * 10;
-  console.log(score >= 5);
-})();
+// (function() {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// })();
+//
+// // console.log(score);
+//
+// (function(good) {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5 - good);
+// })(5);
 
-// console.log(score);
+// closure
+function retirement(retirementAge) {
+  var a = ' years left until retirement';
+  return function(yearOfBirth) {
+    var age = 2019 - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
 
-(function(good) {
-  var score = Math.random() * 10;
-  console.log(score >= 5 - good);
-})(5);
+var retirementLao = retirement(70);
+var retirementThai = retirement(65);
+retirementLao(1990);
+retirementThai(1990);
+retirement(70)(1995);
+
+function interviewQuestion(job) {
+  return function(name) {
+    if (job === 'designer') {
+      console.log(name + 'can u explain ux');
+    } else if (job === 'teacher') {
+      console.log(name + ' teach what subject');
+    } else {
+      console.log('hello' + 'what do you do');
+    }
+  }
+}
+
+interviewQuestion('teacher')('phone');
