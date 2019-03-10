@@ -137,6 +137,10 @@ var UIController = (function() {
     getDOMstrings: function() {
       return DOMStrings;
     },
+    deleteListItem: function(selectorID) {
+      var ele = document.getElementById(selectorID);
+      ele.parentNode.removeChild(ele);
+    },
     addListItem: function(obj, type) {
       var html, newHtml, element;
       // Create html string with placeholder text
@@ -183,7 +187,9 @@ var controller = (function(budgetCtrl, UICtrl) {
       // 1. delete the item from datastructure
       budgetCtrl.deleteItem(type, ID);
       // 2. delete item from UI
+      UICtrl.deleteListItem(itemID);
       // 3. update & show new budget
+      updateBudget();
     }
   };
 
