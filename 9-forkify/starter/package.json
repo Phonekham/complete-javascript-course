@@ -4,12 +4,14 @@
   "description": "learning javascript",
   "main": "index.js",
   "scripts": {
-    "test": "hi"
+    "dev": "webpack --mode development",
+    "build":"webpack --mode production"
   },
   "author": "Phonekham",
   "license": "ISC",
   "devDependencies": {
     "jquery": "^3.3.1",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }
