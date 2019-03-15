@@ -3846,19 +3846,30 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _test = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n\nvar _test2 = _interopRequireDefault(_test);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar x = 34; // Global app controller\n\nconsole.log('I imported ' + _test2.default + ' from another module hi x is ' + x);\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("\n\nvar _Search = __webpack_require__(/*! ./models/Search */ \"./src/js/models/Search.js\");\n\nvar _Search2 = _interopRequireDefault(_Search);\n\nvar _searchView = __webpack_require__(/*! ./views/searchView */ \"./src/js/views/searchView.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// Global app controller\nconsole.log('Using imported function ' + (_searchView.ID, 2) + ' and ' + (0, _searchView.multiply)(3, 5) + '. ' + _Search2.default);\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
-/***/ "./src/js/test.js":
-/*!************************!*\
-  !*** ./src/js/test.js ***!
-  \************************/
+/***/ "./src/js/models/Search.js":
+/*!*********************************!*\
+  !*** ./src/js/models/Search.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nconsole.log('imported module jj ff');\nexports.default = 55;\n\n//# sourceURL=webpack:///./src/js/test.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = \"I'm export string\";\n\n//# sourceURL=webpack:///./src/js/models/Search.js?");
+
+/***/ }),
+
+/***/ "./src/js/views/searchView.js":
+/*!************************************!*\
+  !*** ./src/js/views/searchView.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: F:/Javascript/complete-javascript-course/9-forkify/starter/src/js/views/searchView.js: Unexpected token, expected { (2:7)\\n\\n  1 | export const add = (a, b) => a + b;\\n> 2 | export multiply = (a, b) => a * b;\\n    |        ^\\n  3 | export const ID = 34;\\n\");\n\n//# sourceURL=webpack:///./src/js/views/searchView.js?");
 
 /***/ }),
 
